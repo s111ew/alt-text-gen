@@ -1,12 +1,17 @@
 const fs = require("fs-extra");
+const { Configuration, OpenAIApi } = require("openai");
 
-async function writeMarkdownFile(imageData, outputPath) {
-  const htmlLines = imageData.map(({ fileName, altText, additionalParams }) => {
-    return `<img src='./images/${fileName}' alt='${altText}' ${additionalParams}>`;
-  });
-
-  await fs.writeFile(outputPath, htmlLines.join("\n"));
-  console.log("Markdown file created with image tags at:", outputPath);
+function setupOpenAI(apiKey) {
+  const configuration = new Configuration({ apiKey });
+  return new OpenAIApi(configuration);
 }
 
-module.exports = { writeMarkdownFile };
+async function generateAltText(imagePath, openai) {
+  const imageBuffer = await fs.readFile(imagePath);
+
+  // Replace with OpenAI Vision API call for generating alt text
+  const response = await openai.createImageDescription({ image: imageBuffer });
+  return response.data.alt_text;
+}
+
+module.exports = { generateAltText, setupOpenAI };
