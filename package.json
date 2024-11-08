@@ -1,0 +1,30 @@
+{
+  "name": "alt-text-gen",
+  "version": "1.0.0",
+  "description": "Automatically generate HTML <img> elements with alt text included",
+  "main": "index.js",
+  "scripts": {
+    "init": "node index.js init",
+    "generate": "node index.js generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s111ew/alt-text-gen.git"
+  },
+  "keywords": [
+    "alt text",
+    "image",
+    "markdown",
+    "OpenAI"
+  ],
+  "author": "Sam Llewellyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s111ew/alt-text-gen/issues"
+  },
+  "homepage": "https://github.com/s111ew/alt-text-gen#readme",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "openai": "^4.71.1"
+  }
+}
