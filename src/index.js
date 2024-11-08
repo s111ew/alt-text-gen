@@ -68,3 +68,15 @@ async function generate() {
     console.error("Error reading image folder or generating markdown:", error);
   }
 }
+
+program
+  .command("init")
+  .description("Initialize the configuration file")
+  .action(init);
+
+program
+  .command("generate")
+  .description("Generate alt text and create markdown file")
+  .action(generate);
+
+program.parse(process.argv);

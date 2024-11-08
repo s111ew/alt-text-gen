@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/s111ew/alt-text-gen#readme",
   "dependencies": {
+    "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
     "openai": "^4.71.1"
   }
